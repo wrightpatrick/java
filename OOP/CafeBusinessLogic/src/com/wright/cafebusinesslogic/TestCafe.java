@@ -26,6 +26,15 @@ public class TestCafe {
 			menu.add("mocha");
 			
 			appTest.displayMenu(menu);
+			
+			System.out.println("\n----- Add Customer Test-----");
+	        ArrayList<String> customers = new ArrayList<String>();
+	        customers.add("Ralphalangelo");
+	        customers.add("Jonifer");
+	        customers.add("Sbeve");
+	        customers.add("Bobathy");
+	        
+	        appTest.showCustomers(customers);
 	}
 	
 	

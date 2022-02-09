@@ -40,4 +40,14 @@ public class CafeUtil {
 		}
 	}
 	
+//-------------------------------------------------
+	public void showCustomers(ArrayList<String> customers) {
+		
+		for (int i = 0; i < 4; i++) {
+            
+            System.out.printf("%s \n", customers.get(i));
+        }
+		
+	}
+	
 }
