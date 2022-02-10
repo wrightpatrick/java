@@ -34,7 +34,9 @@ public class TestCafe {
 	        customers.add("Sbeve");
 	        customers.add("Bobathy");
 	        
+	        appTest.addCustomer(customers);
 	        appTest.showCustomers(customers);
+	        
 	}
 	
 	

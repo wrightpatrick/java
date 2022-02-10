@@ -1,6 +1,7 @@
 package com.wright.cafebusinesslogic;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CafeUtil {
 	
@@ -48,6 +49,17 @@ public class CafeUtil {
             System.out.printf("%s \n", customers.get(i));
         }
 		
+	}
+	
+//-------------------------------------------------
+	public void addCustomer(ArrayList<String> customers) {
+			
+		System.out.println("Please enter your name: ");
+		
+		Scanner s = new Scanner(System.in);
+				String userInput = s.next();
+				customers.add(userInput);
+			
 	}
 	
 }
