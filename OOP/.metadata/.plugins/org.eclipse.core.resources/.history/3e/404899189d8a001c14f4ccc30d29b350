@@ -1,0 +1,39 @@
+package com.wright.PuzzleJava;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class PuzzleUtil {
+	
+	Random rng = new Random();
+	
+	public void testing() {
+		System.out.println("puzzling, quite puzzling...");
+	}
+
+	public ArrayList<Integer> getTenRolls() {
+		ArrayList<Integer> rolls = new ArrayList<Integer>();
+		for(int i = 1; i <= 10; i++) {
+			rolls.add(rng.nextInt(1, 21));
+			}
+		return rolls;
+	}
+	
+	public String getRandomLetter() {
+		String[] letterArray = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		int pick = rng.nextInt(0, 26);
+		System.out.println(pick);
+		return letterArray[pick];
+	}
+	
+	public String generatePassword() {
+		String[] letterArray = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		int pick = rng.nextInt(0, 26);
+		String pass = "";
+		while(pass.length() < 8) {
+			pass.concat(letterArray[pick]);
+			System.out.println(pass);
+		}
+		return pass;
+	}
+}

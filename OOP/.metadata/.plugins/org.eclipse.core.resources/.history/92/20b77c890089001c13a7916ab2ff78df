@@ -1,0 +1,22 @@
+package com.wright.OOPIntroStocks_Portfolio;
+
+public class PortfolioStockTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Bros");
+		
+		Stock stock1 = new Stock();
+		Stock stock2 = new Stock();
+		Stock stock3 = new Stock();
+
+		stock1.name = "QYLD";
+		stock2.name = "TSLA";
+		stock3.name = "MARA";
+		stock1.price = 22.98;
+		stock2.price = 800.11;
+		stock3.price = 44.23;
+		System.out.println(String.format("stock 1 info: Name- %s. Price- %s",stock1.name, stock1.price);
+	}
+
+}

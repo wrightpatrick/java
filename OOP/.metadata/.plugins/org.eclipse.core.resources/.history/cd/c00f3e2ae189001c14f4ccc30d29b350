@@ -1,0 +1,9 @@
+package com.wright.PuzzleJava;
+
+public class PuzzleUtil {
+	
+	public void testing() {
+		System.out.println("puzzling, quite puzzling...");
+	}
+
+}

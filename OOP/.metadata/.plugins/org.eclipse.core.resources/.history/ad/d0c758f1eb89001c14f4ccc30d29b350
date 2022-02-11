@@ -1,0 +1,20 @@
+package com.wright.PuzzleJava;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class PuzzleJava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PuzzleUtil appTest = new PuzzleUtil();
+		
+			appTest.testing();
+			
+			ArrayList<Integer> rolls = appTest.getTenRolls();
+			System.out.println(rolls);
+			
+	}
+	
+
+}

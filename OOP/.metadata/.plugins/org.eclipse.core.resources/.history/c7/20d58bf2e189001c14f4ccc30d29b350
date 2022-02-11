@@ -1,0 +1,17 @@
+package com.wright.PuzzleJava;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class PuzzleUtil {
+	
+	Random rng = new Random();
+	
+	public void testing() {
+		System.out.println("puzzling, quite puzzling...");
+	}
+
+	public int getTenRolls(ArrayList<integer> rolls) {
+		
+	}
+}

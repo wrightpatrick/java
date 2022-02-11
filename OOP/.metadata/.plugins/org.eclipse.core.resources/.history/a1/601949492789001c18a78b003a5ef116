@@ -1,0 +1,21 @@
+package com.wright.cafebusinesslogic;
+
+public class TestCafe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("testing testing");
+	}
+	
+	public int getStreakGoal() {
+		int total = 0;
+		
+		for(int i = 1; i <= 10; i++) {
+			System.out.println(i);
+			total += i;
+		}
+		
+		return total;
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.wright.PuzzleJava;
+
+public class PuzzleJava {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		PuzzleUtil appTest = new PuzzleUtil();
+		
+			appTest.testing();
+			ArrayList<int> rolls = new ArrayList<int>();
+			
+	}
+	
+
+}

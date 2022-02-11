@@ -1,0 +1,19 @@
+package com.wright.OOPIntroStocks_Portfolio;
+
+public class PortfolioStockTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Bros");
+		
+		Stock stock1 = new Stock();
+		Stock stock2 = new Stock();
+		Stock stock3 = new Stock();
+
+		System.out.println(stock1);
+		stock1.name = "QYLD";
+		stock2.name = "TSLA";
+		stock3.name = "MARA";
+	}
+
+}

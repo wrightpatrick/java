@@ -1,0 +1,22 @@
+package com.wright.PuzzleJava;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class PuzzleUtil {
+	
+	Random rng = new Random();
+	
+	public void testing() {
+		System.out.println("puzzling, quite puzzling...");
+	}
+
+	public ArrayList<Integer> getTenRolls() {
+		ArrayList<Integer> rolls = new ArrayList<Integer>();
+		for(int i = 1; i < 10; i++) {
+			rolls.add(rng.nextInt(1, 21));
+			System.out.println(rolls);
+			}
+		return null;
+	}
+}

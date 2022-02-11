@@ -1,0 +1,30 @@
+package com.wright.OOPIntroStocks_Portfolio;
+
+public class PortfolioStockTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello Bros");
+		
+		Stock stock1 = new Stock();
+		Stock stock2 = new Stock();
+		Stock stock3 = new Stock();
+
+		stock1.setName("QYLD");
+		stock2.setName("TSLA");
+		stock3.setName("MARA");
+		stock1.price = 22.98;
+		stock2.price = 800.11;
+		stock3.price = 44.23;
+		
+		Portfolio portfolio1 = new Portfolio();
+		Portfolio portfolio2 = new Portfolio();
+		
+		portfolio1.name = "Patrick";
+		portfolio1.totalBalance = 1000;
+		portfolio1.isDiamondHands = true;
+		portfolio1.stocks.add(stock1);
+		System.out.println(String.format("stock 1 info: Name- %s. Price- %s",stock1.name, stock1.price));
+	}
+
+}
