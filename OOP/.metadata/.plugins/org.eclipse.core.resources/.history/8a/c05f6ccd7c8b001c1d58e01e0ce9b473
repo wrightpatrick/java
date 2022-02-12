@@ -1,0 +1,5 @@
+package com.wright.bankaccount;
+
+public class BankAccount {
+
+}

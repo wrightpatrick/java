@@ -1,0 +1,12 @@
+package com.wright.bankaccount;
+
+public class TestBankAccount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BankAccount account1 = new BankAccount(1000.00, 10000.00, 1111111111);
+		BankAccount account2 = new BankAccount(500.00, 2000.00, 222222222);
+		System.out.println("Accounts " + account1);
+	}
+
+}

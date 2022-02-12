@@ -1,0 +1,50 @@
+package com.wright.bankaccount;
+
+
+public class BankAccount {
+	
+	
+	public Double checkingBalance = 0.0;
+	public Double savingsBalance = 0.0;
+	public long accountNumber;
+	
+	static int totalAccounts = 0;
+	static double totalCashUnderManagement = 0.0;
+	
+	
+	//default constructor 
+	public BankAccount(double checkingBalance, double savingsBalance, long accountNumber) {
+		this.checkingBalance = checkingBalance;
+		this.savingsBalance = savingsBalance;
+		this.accountNumber = accountNumber;
+		totalAccounts += 1;
+		totalCashUnderManagement += (checkingBalance + savingsBalance);
+	}
+	
+	
+	//check balances
+	public void getBalanceAll() {
+		System.out.println("Account:" + this.accountNumber + " Checking Balance:" + this.checkingBalance + " Savings Balance:" + this.savingsBalance);
+	}
+	
+	public void getSavings() {
+		System.out.println("Savings Account Balance:" + this.savingsBalance);
+	}
+	
+	public void getChecking() {
+		System.out.println("Checking Account Balance:" + this.checkingBalance);
+	}
+	
+	
+	//move money
+	public void depositIntoSavings(int deposit) {
+		this.savingsBalance += deposit;
+		System.out.println(this.savingsBalance);
+	}
+	
+	public void depositIntoChecking(int deposit) {
+		this.checkingBalance += deposit;
+		System.out.println(this.checkingBalance);
+	}
+	
+}
