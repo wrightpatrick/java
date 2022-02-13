@@ -1,0 +1,5 @@
+package com.wright.quoteroutes;
+
+public class HomeController {
+
+}
