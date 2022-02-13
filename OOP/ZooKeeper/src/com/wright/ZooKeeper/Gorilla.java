@@ -1,6 +1,7 @@
 package com.wright.ZooKeeper;
 
 public class Gorilla extends Mammal{
+	
 
 	
 	public void throwThings() {

@@ -12,6 +12,15 @@ public class Lab {
 		Donkey_Kong.eatBananas();
 		Donkey_Kong.climbSomething();
 		Donkey_Kong.displayEnergy();
+		Succubus Mildred = new Succubus();
+		Mildred.attackTown();
+		Mildred.attackTown();
+		Mildred.attackTown();
+		Mildred.eatHumans();
+		Mildred.eatHumans();
+		Mildred.fly();
+		Mildred.fly();
+		Mildred.displayEnergy();
 	}
 
 }
