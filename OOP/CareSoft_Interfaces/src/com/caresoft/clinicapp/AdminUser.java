@@ -62,7 +62,7 @@ public class AdminUser extends User implements HIPAACompliantAdmin, HIPAAComplia
 			authIncident();
 			return false;
 		} else
-			return false;
+			return true;
 	}
 
 
