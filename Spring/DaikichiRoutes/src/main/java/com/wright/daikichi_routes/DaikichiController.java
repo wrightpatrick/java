@@ -1,15 +1,17 @@
 package com.wright.daikichi_routes;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class DaikichiController {
 
 	@RequestMapping("/")
-	public String home() {
-		return "Hello my Valentine";
+	public String home(Model model) {
+		model.addAttribute("name", "Patrick");
+		return "index.jsp";
 	}
 
 	@RequestMapping("/Daikichi")
