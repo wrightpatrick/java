@@ -28,6 +28,7 @@
 					<tr>
 						<td><c:out value="${fruits.name}"></c:out></td>
 						<td><c:out value="${fruits.price}"></c:out></td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
