@@ -25,7 +25,7 @@
 <body>
 	<div class="container">
 		<!-- Beginning of Container -->
-		<h1 class="display-1">List of Expenses</h1>
+		<h1 class="display-3">List of Expenses</h1>
 		<!-- Table to Display expenses -->
 		<table class="table table-dark">
 			<thead>
@@ -49,7 +49,7 @@
 		</table>
 
 		<!-- form to add new expense -->
-		<h1 class="display-1">Add New Expense</h1>
+		<h1 class="display-3">Add New Expense</h1>
 		<form:form action="/expense/create" method="post" modelAttribute="travelExpense">
 			<div class="mb-3">
 				<form:label path="expenseName" class="form-label">Expense Name</form:label>
