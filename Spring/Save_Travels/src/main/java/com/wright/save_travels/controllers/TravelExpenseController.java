@@ -45,7 +45,7 @@ public class TravelExpenseController {
 		}
 	}
 
-	//view one expense
+	//view one expense to edit
 	@GetMapping("/expense/edit/{id}")
 	public String edit(@PathVariable("id") Long id, Model model) {
 		TravelExpense editTravelExpense = this.travelExpenseService.findExpense(id);
@@ -64,4 +64,19 @@ public class TravelExpenseController {
 			return "redirect:/";
 		}
 	}
+	
+	//delete one expense
+	@GetMapping("/expense/delete/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		this.travelExpenseService.deleteExpense(id);
+		return "redirect:/";
+	}
+	
+	//view one expense
+		@GetMapping("/expense/view/{id}")
+		public String view(@PathVariable("id") Long id, Model model) {
+			TravelExpense viewTravelExpense = this.travelExpenseService.findExpense(id);
+			model.addAttribute("viewTravelExpense", viewTravelExpense);
+			return "dashboard.jsp";
+		}
 }

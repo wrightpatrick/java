@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Expense Details</title>
   <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
       rel="stylesheet" 
@@ -23,7 +23,29 @@
 </head>
 <body>
     <div class="container"> <!-- Beginning of Container -->
-        <h1>Hello, Dashboard placeholder</h1>
+        <a type="button" href="/" class="btn btn-info float-end mt-2">Return to Homepage</a>
+        <h1 class="display-1">Expense Details</h1>
+        <!-- container to view expense -->
+			<div class="row">
+				<p class="display-6">Expense Name:</p class="display-6">
+				<p>${viewTravelExpense.expenseName}</p>
+			</div>
+
+			<div class="row">
+				<p class="display-6">Vendor:</p class="display-6">
+				<p>${viewTravelExpense.vendor}</p>
+			</div>
+
+			<div class="row">
+				<p class="display-6">Amount:</p class="display-6">
+				<p>$${viewTravelExpense.amount}</p>
+			</div>
+
+			<div class="row">
+				<p class="display-6">Description:</p class="display-6">
+				<p>${viewTravelExpense.description}</p>
+			</div>
+			
     </div> <!-- End of Container -->
 </body>
 </html>

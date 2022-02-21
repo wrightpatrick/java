@@ -42,5 +42,9 @@ public class TravelExpenseService {
 	public TravelExpense updateExpense(TravelExpense travelExpense) {
 		return this.travelExpensesRepository.save(travelExpense);
 	}
-
+	
+	//delete expense
+	public void deleteExpense(Long id) {
+		this.travelExpensesRepository.deleteById(id);
+	}
 }

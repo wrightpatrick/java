@@ -25,7 +25,7 @@
 <body>
 	<div class="container">
 		<!-- Beginning of Container -->
-
+		<h1>List of Expenses</h1>
 		<!-- Table to Display expenses -->
 		<table class="table table-dark">
 			<thead>
@@ -39,10 +39,10 @@
 			<tbody>
 				<c:forEach var="allTravelExpenses" items="${allTravelExpenses}">
 					<tr>
-						<td>${allTravelExpenses.expenseName}</td>
+						<td><a href="/expense/view/${allTravelExpenses.id}">${allTravelExpenses.expenseName}</a></td>
 						<td>${allTravelExpenses.vendor}</td>
 						<td>${allTravelExpenses.amount}</td>
-						<td><a href="/expense/edit/${allTravelExpenses.id}">Edit</a></td>
+						<td><a href="/expense/edit/${allTravelExpenses.id}">Edit</a> | <a href="/expense/delete/${allTravelExpenses.id}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
