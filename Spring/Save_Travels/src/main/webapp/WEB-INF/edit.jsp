@@ -8,12 +8,12 @@
 <!-- form:form -->
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
-<%@ page isErrorPage="true"%>
+<%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Save Travels</title>
+<title>Edit Expense</title>
 <!-- Bootstrap -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -25,31 +25,11 @@
 <body>
 	<div class="container">
 		<!-- Beginning of Container -->
+		<h1>Edit Expense Details</h1>
 
-		<!-- Table to Display expenses -->
-		<table class="table table-dark">
-			<thead>
-				<tr>
-					<th scope="col">Expenses</th>
-					<th scope="col">Vendor</th>
-					<th scope="col">Amount</th>
-					<th scope="col">Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="allTravelExpenses" items="${allTravelExpenses}">
-					<tr>
-						<td>${allTravelExpenses.expenseName}</td>
-						<td>${allTravelExpenses.vendor}</td>
-						<td>${allTravelExpenses.amount}</td>
-						<td><a href="/expense/edit/${allTravelExpenses.id}">Edit</a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-
-		<!-- form to add new expense -->
-		<form:form action="/expense/create" method="post" modelAttribute="travelExpense">
+		<!-- form to edit expense -->
+		<form:form action="/expense/update/${editTravelExpense.id}" method="post" modelAttribute="editTravelExpense">
+			<input type="hidden" name="_method" value="put">
 			<div class="mb-3">
 				<form:label path="expenseName" class="form-label">Expense Name</form:label>
 				<form:errors class="text-danger" path="expenseName"/>

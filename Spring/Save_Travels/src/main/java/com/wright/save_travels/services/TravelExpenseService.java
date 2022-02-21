@@ -37,5 +37,10 @@ public class TravelExpenseService {
 			return null;
 		}
 	}
+	
+	//update expense
+	public TravelExpense updateExpense(TravelExpense travelExpense) {
+		return this.travelExpensesRepository.save(travelExpense);
+	}
 
 }

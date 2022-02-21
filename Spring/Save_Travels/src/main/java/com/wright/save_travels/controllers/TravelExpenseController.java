@@ -9,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.wright.save_travels.models.TravelExpense;
 import com.wright.save_travels.services.TravelExpenseService;
@@ -23,7 +25,7 @@ public class TravelExpenseController {
 		this.travelExpenseService = travelExpenseService;
 	}
 
-	//homepage
+	//home page
 	@GetMapping("/")
 	public String index(Model model) {
 		List<TravelExpense> allTravelExpenses = travelExpenseService.allTravelExpenses();
@@ -44,8 +46,22 @@ public class TravelExpenseController {
 	}
 
 	//view one expense
-	@GetMapping("/expense/view")
-	public String home() {
-		return "dashboard.jsp";
+	@GetMapping("/expense/edit/{id}")
+	public String edit(@PathVariable("id") Long id, Model model) {
+		TravelExpense editTravelExpense = this.travelExpenseService.findExpense(id);
+		model.addAttribute("editTravelExpense", editTravelExpense);
+		return "edit.jsp";
+	}
+	
+	//edit one expense
+	@PutMapping("/expense/update/{id}")
+	public String update(@PathVariable("id") Long id, @Valid @ModelAttribute("editTravelExpense") TravelExpense editTravelExpense, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			
+			return "edit.jsp";
+		} else {
+			travelExpenseService.updateExpense(editTravelExpense);
+			return "redirect:/";
+		}
 	}
 }
