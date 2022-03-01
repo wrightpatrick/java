@@ -18,7 +18,7 @@ public class UserService {
 	private UserRepository userRepo;
 
 	
-    // TO-DO: Write register and login methods!
+    // register new user
     public User register(User newUser, BindingResult result) {
         
     	// reject if email is taken

@@ -1,5 +1,7 @@
 package com.wright.login.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -11,16 +13,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.wright.login.models.Book;
 import com.wright.login.models.User;
+import com.wright.login.services.BookService;
 import com.wright.login.services.UserService;
 import com.wright.login.validations.LoginUser;
 
 @Controller
 public class HomeController {
 
-	
+	@Autowired
+	BookService bookService;
     @Autowired
-    private UserService userServ;
+    UserService userServ;
     
     @GetMapping("/")
     public String index(Model model) {
@@ -33,8 +38,7 @@ public class HomeController {
     }
     
     @PostMapping("/register")
-    public String register(@Valid @ModelAttribute("newUser") User newUser, 
-            BindingResult result, Model model, HttpSession session) {
+    public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
         
         User user = this.userServ.register(newUser, result);
         
@@ -68,6 +72,7 @@ public class HomeController {
         return "redirect:/home";
     }
     
+    // dashboard once you are logged in
     @GetMapping("/home")
     public String home(HttpSession session, Model model) {
     	//give the ID of user in session
@@ -78,8 +83,10 @@ public class HomeController {
     	}
     	
     	User loggedInUser = this.userServ.findOneUser(id);
-    	
     	model.addAttribute("loggedInUser", loggedInUser);
+    	
+    	List<Book> allBooks = bookService.findAll();
+    	model.addAttribute("allBooks", allBooks);
     	
     	return "dashboard.jsp";
     }

@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login & Registration</title>
+<title>Book Club</title>
   <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
       rel="stylesheet" 
@@ -24,7 +24,30 @@ pageEncoding="UTF-8"%>
     <div class="container"> <!-- Beginning of Container -->
 		<a href="/logout" class="btn btn-outline-warning float-end mt-3">Log Out</a>
 		<h1>Welcome, ${loggedInUser.userName}</h1>
-        
+		<a href="/books/create" class="btn btn-outline-primary float-end mt-3">Add New Book</a>
+		<div class="container mx-auto p-5">
+			<h4 class="heading mb-4">All Books</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Title</th>
+						<th scope="col">Author</th>
+						<th scope="col">Posted By</th>
+					</tr>
+				</thead>
+				<tbody>
+				<c:forEach var="oneBook" items="${allBooks}">
+					<tr>
+						<td><c:out value="${oneBook.id}" /></td>
+						<td><a href="/books/${oneBook.id}"><c:out value="${oneBook.title}" /></a></td>
+						<td><c:out value="${oneBook.author}" /></td>
+						<td><c:out value="${loggedInUser.userName}" /></td>
+					</tr>
+				</c:forEach>
+				</tbody>
+			</table>
+		  </div>
     </div> <!-- End of Container -->
 </body>
 </html>
